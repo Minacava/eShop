@@ -20,9 +20,19 @@
         "path": "/cancel/"
     },
     {
+        "componentChunkName": "component---src-pages-cart-js",
+        "jsonName": "cart-a6e",
+        "path": "/cart/"
+    },
+    {
         "componentChunkName": "component---cache-dev-404-page-js",
         "jsonName": "dev-404-page-5f9",
         "path": "/dev-404-page/"
+    },
+    {
+        "componentChunkName": "component---src-pages-favorite-js",
+        "jsonName": "favorite-5d7",
+        "path": "/favorite/"
     },
     {
         "componentChunkName": "component---src-pages-gracias-js",
@@ -43,5 +53,10 @@
         "componentChunkName": "component---src-templates-product-js",
         "jsonName": "sku-h-9-n-byeke-2-b-m-8-x-c-54b",
         "path": "/sku_H9nBYEKE2bM8xC"
+    },
+    {
+        "componentChunkName": "component---src-templates-product-js",
+        "jsonName": "sku-hbl-4-u-ar-xxq-1-rq-w-523",
+        "path": "/sku_HBL4uArXxq1rqW"
     }
 ]

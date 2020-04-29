@@ -8,14 +8,17 @@ export default () => {
     <>
       <SEO title="Compra Exitosa" />
       <Purchase>
-        <h2>Compra Exitosa</h2>
-        <p>Espero que disfrutes tu swag, lucelo con orgullo</p>
-        <p>¡Te esperamos de vuelta, no pares de aprender!</p>
+        <h2>Your purchase was successful</h2>
+        <p>We want you to smile when you receive your Shark product.</p>
+        <p>
+          Expected delivery time is 3-5 business days, depending on the shipping
+          destination
+        </p>
         <span role="img" aria-label="emoji">
           ❤️
         </span>
         <Link to="/">
-          <Button>Volver al Catálogo</Button>
+          <Button>Back Home</Button>
         </Link>
       </Purchase>
     </>

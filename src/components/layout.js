@@ -9,11 +9,11 @@ const Layout = ({ children }) => (
     <Header />
     <Content>
       <main>{children}</main>
-      <Footer>
-        con ♥︎ por
-        <a href="/">Website</a>
-      </Footer>
     </Content>
+    <Footer>
+      con ♥︎ por
+      <a href="/">Website</a>
+    </Footer>
   </>
 )
 Layout.propTypes = {

@@ -4,14 +4,22 @@ export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([])
-  const addToCard = element => {
+  const [favorite, setFavorite] = useState([])
+  const addToCart = element => {
     setCart([...cart, element])
   }
+
+  const addToFavorite = item => {
+    setFavorite([...favorite, item])
+  }
+
   return (
     <CartContext.Provider
       value={{
         cart,
-        addToCard,
+        addToCart,
+        favorite,
+        addToFavorite,
       }}
     >
       {children}

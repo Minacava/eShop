@@ -66,7 +66,7 @@ export const StyledJumbo = styled.div`
   justify-content: center;
   padding: 2rem 2rem;
   color: ${colors.KiaDarkGrey};
-  margin-bottom: 5rem;
+  margin-bottom: 9rem;
   overflow: hidden;
   position: relative;
   div{
@@ -74,9 +74,10 @@ export const StyledJumbo = styled.div`
     width: 35vw;
   };
   & h2 {
-    margin: 0;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin: 0 0 20px 0;
+      color: ${colors.lightBlue};
   };
   & small{
     font-weight: 100;
@@ -90,6 +91,7 @@ export const StyledJumbo = styled.div`
     flex-direction: row;
     & h2 {
       font-size: 1rem;
+
     };
     & small{
       font-size: 0.8rem;
@@ -99,19 +101,23 @@ export const StyledJumbo = styled.div`
     padding: 2rem 4rem;
     flex-direction: row;
     & h2 {
-      font-size: 1rem;
+      font-size: 1.5rem;
     };
     & small{
-      font-size: 0.8rem;
+      font-size: 1.2rem;
     };
   `}
   ${above.large`
     padding: 2rem 10rem;
     flex-direction: row;
     & h2 {
-      margin: 0;
+
       font-weight: 500;
-      font-size: 2rem;
+      font-size: 2.2rem;
+    };
+       & small{
+      font-size: 1.8rem;
+
     };
   `}
 
@@ -150,7 +156,7 @@ export const StyledProducts = styled.div`
   align-items: center;
   padding: 2rem 1rem 5rem 1rem;
   h2 {
-    color: ${colors.darkBlue};
+    color: ${colors.lightBlue};
     font-size: 2rem;
   }
   & img {
@@ -175,13 +181,13 @@ export const StyledProducts = styled.div`
       font-size: 1.2rem;
     }
     small {
-      color: ${colors.darkBlue};
+      color: ${colors.lightBlue};
       font-weight: 500;
       font-size: 1.2rem;
     }
     a {
       text-decoration: none;
-      color: ${colors.darkBlue};
+      color: ${colors.lightBlue};
       font-size: 0.8rem;
       border-bottom: 3px solid ${colors.green};
       span {
@@ -211,7 +217,6 @@ export const StyledProductDetail = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  text-align: justify;
   height: 82vh;
   img {
     width: 100%;
@@ -222,8 +227,9 @@ export const StyledProductDetail = styled.div`
   p {
     color: #171717;
     font-weight: 500;
-    margin: 0;
+    margin: 1.2rem 0;
     font-size: 0.9rem;
+    text-align: flex-start;
   }
   & b {
     color: ${colors.green};
@@ -237,7 +243,7 @@ export const StyledProductDetail = styled.div`
   }
   small {
     margin: 0;
-    color: #505050;
+    color: ${colors.KiaDarkGrey};
     text-align: justify;
   }
   div {
@@ -267,23 +273,24 @@ export const StyledCart = styled.div`
   height: 80vh;
   overflow-y: scroll;
   h2 {
-    border-bottom: 2px solid ${colors.darkBlue};
-    color: ${colors.darkBlue};
+    border-bottom: 2px solid ${colors.lightBlue};
+    color: ${colors.lightBlue};
   }
   & th {
-    color: #959595;
+    color: ${colors.KiaDarkGrey};
     margin: 0;
     border: none;
   }
   & img {
     vertical-align: middle;
-    width: 60px;
+    width: 120px;
+    margin: 1rem;
   }
   nav {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    color: ${colors.darkBlue};
+    color: ${colors.lightBlue};
     div {
       display: flex;
       align-items: baseline;
@@ -344,10 +351,10 @@ export const Footer = styled.footer`
 `
 
 export const Tag = styled.span`
-  padding: 0.3rem 1.5rem;
-  background-color: ${colors.gray};
+  padding: 0.1rem 0.6rem;
+  background-color: ${colors.orange};
   display: inline-block;
-  margin: 0.5rem 0;
+  margin: 1.2rem 0;
   color: white;
   border-radius: 5px;
 `
@@ -378,7 +385,7 @@ export const QtySelect = styled.div`
   button {
     padding: 0 10px;
     background-color: transparent;
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     max-width: 70px;
     height: 40px;
     display: flex;
@@ -387,12 +394,12 @@ export const QtySelect = styled.div`
     color: #707070;
   }
   input {
-    padding: 0.4rem;
+    padding: 0.6rem;
     background-color: transparent;
-    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-left: none;
     border-right: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     max-width: 40px;
     max-height: 40px;
   }
@@ -411,15 +418,16 @@ export const SizeSelect = styled.div`
 export const Button = styled.button`
   cursor: pointer;
   background-color: ${({ type }) =>
-    type === "outline" ? "transparent" : colors.green};
+    type === "outline" ? "transparent" : colors.KiaDarkGrey};
   color: ${({ type }) => (type === "outline" ? colors.darkBlue : "white")};
   font-size: 0.9rem;
-  padding: 0.6rem 1rem;
+  padding: 0.3rem 1rem;
+  margin: 1.2rem 0;
   font-weight: 500;
   border: ${({ type }) =>
     type === "outline"
-      ? `3px solid ${colors.darkBlue}`
-      : `3px solid ${colors.green}`};
+      ? `1px solid ${colors.darkBlue}`
+      : `1px solid ${colors.KiaDarkGrey}`};
   border-radius: 12px;
   a {
     text-decoration: none;
@@ -431,11 +439,21 @@ export const Button = styled.button`
     cursor: not-allowed;
   }
 `
-
-export const SelectStars = styled.div`
+export const SelectFavorite = styled.div`
+  margin: 0.5rem 0;
   span {
     margin: 0 5px;
-    color: ${colors.gray};
+    cursor: pointer;
+    font-size: 40px;
+    color: ${props =>
+      props.selected === true ? colors.orange : colors.darkBlue};
+  }
+`
+export const SelectStars = styled.div`
+  margin: 0.5rem 0;
+  span {
+    margin: 0 5px;
+    color: ${colors.KiaDarkGrey};
     cursor: pointer;
   }
   span:nth-child(-n + ${props => props.selected}) {

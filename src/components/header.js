@@ -5,7 +5,7 @@ import { MenuItem, StyledHeader } from "../styles/components"
 import { CartContext } from "../context"
 const Header = () => {
   const { cart } = useContext(CartContext)
-
+  const { favorite } = useContext(CartContext)
   return (
     <StyledHeader>
       <Link to="/">
@@ -19,6 +19,10 @@ const Header = () => {
           <MenuItem margin>
             <a href="/">Website</a>
           </MenuItem>
+          <MenuItem margin>
+            <Link to="/favorite"> ♥︎ </Link>
+          </MenuItem>
+
           <MenuItem>
             <Link to="/cart">
               <span>

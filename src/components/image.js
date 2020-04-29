@@ -6,7 +6,7 @@ export default function Image({ name }) {
   const data = useStaticQuery(
     graphql`
       query GET_IMAGE {
-        icon: file(relativePath: { eq: "icon_dos.png" }) {
+        icon: file(relativePath: { eq: "p-1.png" }) {
           childImageSharp {
             fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
