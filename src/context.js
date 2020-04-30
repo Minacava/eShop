@@ -1,17 +1,18 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useState } from "react";
 
-export const CartContext = createContext()
+export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([])
-  const [favorite, setFavorite] = useState([])
-  const addToCart = element => {
-    setCart([...cart, element])
-  }
+  const [cart, setCart] = useState([]);
+  const [favorite, setFavorite] = useState([]);
 
-  const addToFavorite = item => {
-    setFavorite([...favorite, item])
-  }
+  const addToCart = (element) => {
+    setCart([...cart, element]);
+  };
+
+  const addToFavorite = (item) => {
+    setFavorite([...favorite, item]);
+  };
 
   return (
     <CartContext.Provider
@@ -24,5 +25,5 @@ export const CartProvider = ({ children }) => {
     >
       {children}
     </CartContext.Provider>
-  )
-}
+  );
+};

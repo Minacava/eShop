@@ -1,23 +1,24 @@
-import React, { useContext, useEffect, useState } from "react"
-import { Link } from "gatsby"
-import { Button, StyledCart } from "../styles/components"
-import priceFormat from "../utils/priceFormat"
-import { CartContext } from "../context"
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "gatsby";
+import { Button, StyledCart } from "../styles/components";
+import priceFormat from "../utils/priceFormat";
+import { CartContext } from "../context";
 
-export default function Cart() {
-  const { favorite } = useContext(CartContext)
-  const [data, setData] = useState(favorite)
-  const [total, setTotal] = useState(0)
+export default function Favorite() {
+  const { favorite, cart, addToCart } = useContext(CartContext);
 
-  // const getTotal = () => {
-  //   setTotal(
-  //     cart.reduce((acc, current) => acc + current.price * current.quantity, 0)
-  //   )
-  // }
+  console.log("cart in favorite", cart);
+  console.log("favorite in favorite", favorite);
 
-  useEffect(() => {
-    // getTotal()
-  }, [])
+  useEffect(() => {}, []);
+
+  const handleSubmit = () => {
+    Object.entries(favorite).map(([key, favorite], i) => addToCart(favorite));
+  };
+
+  // const removeFavoriteEntry = () => {
+  //   console.log("remove");
+  // };
 
   return (
     <StyledCart>
@@ -30,7 +31,7 @@ export default function Cart() {
             <th>Qty</th>
             <th>Total</th>
           </tr>
-          {data.map(poster => (
+          {favorite.map((poster) => (
             <tr key={poster.sku}>
               <td>
                 <img src={poster.metadata.img} alt={poster.name} />
@@ -39,16 +40,13 @@ export default function Cart() {
               <td>{priceFormat(poster.price)}</td>
               <td>{poster.quantity}</td>
               <td>{priceFormat(poster.quantity * poster.price)}</td>
-              <td />
+              <td onClick={handleSubmit}>Send To Cart</td>
             </tr>
           ))}
         </tbody>
       </table>
+
       <nav>
-        {/* <div>
-          <h3>Subtotal:</h3>
-          <small>{priceFormat(total)}</small>
-        </div> */}
         <div>
           <Link to="/">
             <Button type="outline">Back</Button>
@@ -56,5 +54,5 @@ export default function Cart() {
         </div>
       </nav>
     </StyledCart>
-  )
+  );
 }

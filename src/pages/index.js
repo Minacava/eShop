@@ -1,6 +1,6 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Jumbo, SEO, Products } from "../components"
+import React from "react";
+import { graphql } from "gatsby";
+import { Jumbo, SEO, Products } from "../components";
 
 export const query = graphql`
   query GET_DATA {
@@ -31,10 +31,9 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
 const IndexPage = ({ data }) => {
-  console.log(data)
   return (
     <>
       <SEO title="Home" />
@@ -43,7 +42,7 @@ const IndexPage = ({ data }) => {
       />
       <Products products={data.allStripeSku.edges} />
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
